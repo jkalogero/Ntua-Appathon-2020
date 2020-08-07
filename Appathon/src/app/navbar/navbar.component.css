@@ -1,0 +1,77 @@
+ul {
+    list-style: none;
+    color:#4a5568;
+  }
+  
+  .nav-link {
+    color:#54a0ff;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+	color: #100d31;
+}
+  .navbar-light .navbar-nav .nav-link:hover{
+    color: #54a0ff;
+}
+  .nav-link:hover {
+    color:#54a0ff;
+  }
+  
+  .selected-link {
+    color: black !important;
+    box-shadow: 0px 2px 0px 0px rgba(84,160,255,1);
+}
+
+  h5:hover {
+    color:#54a0ff;
+    cursor: pointer;
+  }
+  
+  li:hover{
+    color:#54a0ff;
+    cursor: pointer;
+  }
+  
+  .activeItem {
+    color:#54a0ff;
+  }
+  
+  #filters {
+    padding: 3em;
+    border-radius: .8em;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05) !important;
+  }
+  
+  .activeCheckBox+label:before {
+    border-color: #fff;
+    border-width: 3px;
+  }
+  
+  input+label {
+    transition: color .4s ease;
+  }
+
+  #sticky-sidebar{
+    padding: 3em;
+    padding-left:.5em;
+    padding-right:.5em;
+    background-color: white;
+    margin-left: 2em;
+    border-radius: 1em;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  .disable-select ul{
+    user-select:none;
+  }
+  
+  #general-li {
+    font-weight: 800;
+  }
+  
+  h3 {
+    margin-bottom: 4px;
+    margin-top: 8px;
+  }
+

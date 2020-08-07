@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/home" (click)='displaySelectedRoute("home")'
+                    [ngClass]="{'selected-link': choosenRoute === 'home'}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/tool" (click)='displaySelectedRoute("tool")'
+                    [ngClass]="{'selected-link': choosenRoute === 'tool'}">Tool</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/about" (click)='displaySelectedRoute("about")'
+                    [ngClass]="{'selected-link': choosenRoute === 'about'}">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
