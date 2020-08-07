@@ -47,6 +47,5 @@ Thumbs.db
 
 
 # XML with data
-NCT*
-AllPublicXML.zip
-Contents.txt
+/data
+NCT
