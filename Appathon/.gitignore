@@ -44,3 +44,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+
+# XML with data
+NCT*
+AllPublicXML.zip
+Contents.txt
