@@ -75,3 +75,10 @@ ul {
     margin-top: 8px;
   }
 
+  .header{
+    color: #54a0ff;
+    font-size: x-large;
+    font-weight: bold;
+    cursor: pointer;
+    padding-left: 44em;
+}

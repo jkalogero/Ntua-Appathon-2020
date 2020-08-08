@@ -26,3 +26,10 @@
     display: inline-block;
 }
 
+#wrapper {
+    background-image: url('../../assets/images/background.jpg');
+    height: 100vh !important;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+  }

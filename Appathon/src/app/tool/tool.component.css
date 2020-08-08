@@ -1,0 +1,147 @@
+#sticky-sidebar{
+    padding: 3em;
+    padding-left:.5em;
+    padding-right:.5em;
+    background-color: white;
+    margin-left: 2em;
+    border-radius: 1em;
+    box-shadow: 7px 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  }
+
+.header{
+    color: #54a0ff;
+    /* font-size: large; */
+    font-weight: bold;
+    padding-left: 7em;
+    padding-bottom: 1em;
+}
+
+#text-info{
+    font-size: x-large;
+    display: inline-block;
+    padding: 1em;
+}
+
+.link{
+    display: inline-block;
+}
+
+#general-li {
+    font-weight: 800;
+  }
+
+  ul {
+    list-style: none;
+    color:#4a5568;
+  }
+  
+  li {
+    color:#4a5568;
+  }
+  
+  h5:hover {
+    color:#54a0ff;
+    cursor: pointer;
+  }
+  
+  li:hover{
+    color:#54a0ff;
+    cursor: pointer;
+  }
+  
+  .activeItem {
+    color:#54a0ff;
+  }
+
+  #filters {
+    padding: 3em;
+    border-radius: .8em;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05) !important;
+  }
+
+  .category-wrapper{
+    border: none;
+    background-color: #f7fafc;
+    border-radius: 1.5em;
+    padding: 2em;
+  }
+
+  #wrapper {
+    background-image: url('../../assets/images/background.jpg');
+    height: 200vh !important;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  #label{
+    padding: 2em;
+  }
+
+  .search-btn{
+    align-self: center;
+    padding-top:.3em;  
+    padding-bottom:.3em;  
+    padding-left:1em;  
+    padding-right:1em;
+    color:white;
+    border-radius:2em;
+    background-color: #55D8C6;
+    cursor: pointer;
+  }
+  
+  #main{
+    margin-left: 2em;
+  }
+
+  #free-text{
+    width: 26em;
+  }
+
+  #header{
+    color: #54a0ff;
+    font-size: x-large;
+    font-weight: bold;
+    /* padding-left: 7em; */
+    padding-bottom: 1em;
+}
+
+.results-wrapper{
+  border: none;
+    background-color: #f7fafc;
+    border-radius: 1.5em;
+    padding: 2em;
+    margin-top: 1em;
+}
+
+#results{
+  color: #54a0ff;
+  font-size: x-large;
+  font-weight: bold;
+  /* padding-left: 7em; */
+  padding-bottom: 1em;
+}
+
+#results_text{
+  font-size: x-large;
+  font-weight: bold;
+  /* padding-left: 7em; */
+  padding-bottom: 1em;
+}
+
+#condition_name{
+  color: #54a0ff;
+  font-size: x-large;
+  font-weight: bold;
+  /* padding-left: 7em; */
+  padding-bottom: 1em;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cell{
+  border: #4a5568 1px solid;
+}

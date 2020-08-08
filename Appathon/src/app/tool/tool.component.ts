@@ -9,14 +9,38 @@ import { RecordsService } from '../records.service';
 export class ToolComponent implements OnInit {
 
   records = {}
+  selectedoption = 'TopDrugs'
+
+  params = {
+    "condition": ""
+  }
+
+  showingResults = false
+  conditionShowing = ""
+
+  noSort(){}
+
+  OptionSelected(option) {
+    console.log(option);   
+    this.selectedoption = option
+  }
+
+  getTopDrugs(){
+    let recordsObservable = this._records.getTopDrugs({"condition": this.params['condition']})
+    recordsObservable.subscribe(recordsResult => {
+      this.records = recordsResult
+      console.log(JSON.stringify(this.records))
+    })
+
+    this.showingResults = true
+    this.conditionShowing = this.params['condition']
+    // console.log(JSON.stringify)
+    
+  }
 
   constructor(private _records: RecordsService) {
     
-    let recordsObservable = this._records.getData()
-    recordsObservable.subscribe(recordsResult => {
-      this.records = recordsResult
-    })
-
+  
    }
 
   ngOnInit(): void {

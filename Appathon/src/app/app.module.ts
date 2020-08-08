@@ -8,6 +8,8 @@ import { ToolComponent } from './tool/tool.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FormsModule } from '@angular/forms';
+// import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -16,10 +18,12 @@ import { NavbarComponent } from './navbar/navbar.component';
     AboutComponent,
     HomeComponent,
     NavbarComponent
+    // CommonModule
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

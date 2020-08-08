@@ -1,1 +1,79 @@
-<p>tool works!</p>
+<div class="container col-12" id="wrapper">
+    <div class="row py-3">
+
+        <div class="col-2">
+            <div class="sticky-top">
+                <div class="container disable-select col-12" id="sticky-sidebar">
+                    <ul id="general-options">
+                        <li [ngClass]="{activeItem: 'TopDrugs' == selectedoption}" id="general-li"
+                            (click)="OptionSelected('TopDrugs')">Top Drugs</li>
+                    </ul>
+                    <ul id="general-options">
+                        <li [ngClass]="{activeItem: 'Statistics' == selectedoption}" id="general-li"
+                            (click)="OptionSelected('Statistics')">Statistics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main section -->
+        <div class="col-9" id="main">
+            <ng-container *ngIf="selectedoption === 'TopDrugs';then TopDrugsTemp"></ng-container>
+            <ng-container *ngIf="selectedoption === 'Statistics';then StatisticsTemp"></ng-container>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #TopDrugsTemp>
+    <div class="category-wrapper">
+        <!-- <div class="row d-flex justify-content-between"> -->
+        <div class="row" id="header">
+            Top 10 Intervention Drugs
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <h4 class="label">Type in a condition/disease</h4>
+            </div>
+            <form>
+                <div class="col-5 d-flex justify-content-center" id="condition_text">
+                    <textarea class="form-control" id="free-text" name="first" [(ngModel)]="params['condition']"
+                        rows="1" maxlength="500"></textarea>
+                </div>
+            </form>
+            <div class="col-2 d-flex justify-content-right" id="search-button">
+                <div (click)="getTopDrugs()" class="search-btn">Search</div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+    <ng-container *ngIf="showingResults == true">
+        <div class="results-wrapper">
+            <!-- <div class="row d-flex justify-content-between"> -->
+            <div class="row" id="results">
+                Results
+            </div>
+            <div class="row" id="results_text">
+                Top 10 drugs used against <div id="condition_name">{{conditionShowing}}</div> are:
+            </div>
+            <div class="row">
+                <div class="col">Drug name</div>
+                <div class="col">Number of times it has been used</div>
+                <ng-container *ngFor="let record of records| keyvalue: noSort">
+                    <div class="w-100"></div>
+                    <div class="col" id="cell">{{record.value['_id']}}</div>
+                    <div class="col" id="cell">{{record.value['count']}}</div>
+                </ng-container>
+            </div>
+
+        </div>
+    </ng-container>
+</ng-template>
+
+<ng-template #StatisticsTemp>
+    <div class="category-wrapper">
+        <div class="row d-flex justify-content-between">
+            Statistics
+        </div>
+    </div>
+</ng-template>
