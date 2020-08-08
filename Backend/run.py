@@ -28,12 +28,11 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 
 # app.register_blueprint(main)
 
-@app.route('/condition')
+@app.route('/TopDrugs')
 def getCondition():
     condition=request.args.get('condition')
     print(condition)
-    # pipeline = [{"$match":{"condition":condition }},{"$unwind": "$intervention"}, {"$group": {"_id": "$intervention", "count": {"$sum": 1}}}, {"$sort": SON([("count", -1), ("_id", 1)])}]
-    pipeline = [{"$match":{"condition": condition}}]
+    pipeline = [{"$match":{"condition":condition }},{"$unwind": "$intervention"}, {"$group": {"_id": "$intervention", "count": {"$sum": 1}}}, {"$sort": SON([("count", -1), ("_id", 1)])},{"$limit": 10}]
     sortedResults = list(mongo.db.MediCom.aggregate(pipeline))
     pprint(sortedResults)
     return json.dumps(sortedResults,default=str)
