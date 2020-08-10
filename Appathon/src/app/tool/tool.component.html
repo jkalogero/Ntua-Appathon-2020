@@ -27,7 +27,6 @@
 
 <ng-template #TopDrugsTemp>
     <div class="category-wrapper">
-        <!-- <div class="row d-flex justify-content-between"> -->
         <div class="row" id="header">
             Top 10 Intervention Drugs
         </div>
@@ -49,7 +48,6 @@
     </div>
     <ng-container *ngIf="showingResults == true">
         <div class="results-wrapper">
-            <!-- <div class="row d-flex justify-content-between"> -->
             <div class="row" id="results">
                 Results
             </div>
@@ -61,7 +59,8 @@
                 <div class="col">Number of times it has been used</div>
                 <ng-container *ngFor="let record of records| keyvalue: noSort">
                     <div class="w-100"></div>
-                    <div class="col" id="cell">{{record.value['_id']}}</div>
+                    <div class="col" id="cell_cond" data-toggle="modal" data-target="#staticBackdrop"
+                        (click)="getConditions(record.value['_id'])">{{record.value['_id']}}</div>
                     <div class="col" id="cell">{{record.value['count']}}</div>
                 </ng-container>
             </div>
@@ -71,9 +70,47 @@
 </ng-template>
 
 <ng-template #StatisticsTemp>
-    <div class="category-wrapper">
-        <div class="row d-flex justify-content-between">
+    <div *ngIf="statistics != {}" class="category-wrapper">
+        <div class="row" id="results">
             Statistics
         </div>
+        <div style="display: block;">
+            <canvas baseChart 
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              [colors] = "barChartColors">
+            </canvas>
+          </div>
     </div>
 </ng-template>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Diseases <div class="modalCondName">{{conditionForModal}}</div>  has been used against
+                    for</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ng-container *ngFor="let condition of conditions| keyvalue: noSort">
+                    <div *ngIf="condition.key < 10">
+                        {{condition.value['condition']}}
+                    </div>
+                </ng-container>
+                <div *ngIf="loading == false" class="more"> and {{computeRemainingLength()}} more</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

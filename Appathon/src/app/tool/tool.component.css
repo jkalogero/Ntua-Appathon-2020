@@ -145,3 +145,21 @@
 #cell{
   border: #4a5568 1px solid;
 }
+
+#cell_cond{
+  border: #4a5568 1px solid;
+  cursor: pointer;
+}
+
+.modalCondName{
+  color: #54a0ff !important;
+  padding: 5px;
+  display: inline; 
+}
+
+.more{
+  color: #54a0ff !important;
+  padding: 5px;
+  display: inline; 
+  cursor: pointer;
+}

@@ -7,7 +7,7 @@
 
 ## Τεχνολογίες που θα χρησιμοποιηθούν
 
-To frontend της εφαρμογής θα υλοποιηθεί εξ'ολοκλήρου με το framework <strong>Angular 9</strong>.
+To frontend της εφαρμογής θα υλοποιηθεί εξ'ολοκλήρου με το framework <strong>Angular 10</strong>.
 Πρόκειται για framework βασιζόμενο σε Typescript (υπερσύνολο της Javascript) και έχει προτιμηθεί για το εύρος των βιβλιοθηκών και των δυνατοτήτων που παρέχει στον web developer.
 
 ## Installation

@@ -2,7 +2,7 @@ import os
 from pymongo import MongoClient
 import xml.etree.ElementTree as ET
 
-dir = "/home/john/ECE/Ntua-Appathon-2020/data"
+dir = "/home/john/ECE/buff"
 
 keys = ['nct_id', 'condition', 'intervention']
 
@@ -13,6 +13,7 @@ def convert(dir, file):
     root = tree.getroot()
 
     data = {}
+    conditions = []
     intervention = []
 
     for el in root.iter():
@@ -20,17 +21,19 @@ def convert(dir, file):
             if el.tag == 'intervention':
                 if el.find('intervention_type').text == 'Drug':
                     intervention.append(el.find('intervention_name').text)
+            elif el.tag == 'condition':
+                conditions.append(el.text)
             else:
                 data[el.tag] = el.text
     
-                
+    data['condition'] = conditions
     data['intervention'] = intervention
     return data
 
 # Making Connection
 myclient = MongoClient('localhost', 27017)
 # database
-db = myclient['MediCom_db']
+db = myclient['MediCom_database']
 intervention_collection = db['MediCom']
 
     

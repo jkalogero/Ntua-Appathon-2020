@@ -24,4 +24,27 @@ export class RecordsService {
       shareReplay()
     );
   }
+
+  getConditions(parameters){
+    console.log(parameters)
+    const path = this.apiEndpoint + 'conditions' + '?drug='+parameters;
+    return this._http.get(path).pipe(
+      retry(4),
+      catchError(() => {
+        return EMPTY;
+      }),
+      shareReplay()
+    )
+  }
+
+  getStatistics(){
+    const path = this.apiEndpoint + 'statistics';
+    return this._http.get(path).pipe(
+      retry(4),
+      catchError(() => {
+        return EMPTY;
+      }),
+      shareReplay()
+    )
+  }
 }
