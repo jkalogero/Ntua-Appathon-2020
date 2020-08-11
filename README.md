@@ -77,5 +77,5 @@ pipenv install
 
 ### Run the backend application
 ```
-python run.py
+python3 run.py
 ```

@@ -56,3 +56,6 @@ NCT
 
 # Pipfile.lock from pipenv
 Pipfile.lock
+
+# pptx lock
+.~lock.presentation.pptx#
