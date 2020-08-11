@@ -88,14 +88,17 @@ export class ToolComponent implements OnInit {
     statisticsObservable.subscribe(statisticsResult => {
       this.statistics = statisticsResult
       this.statistics.forEach(element => {
-        this.barChartLabels.push(element["_id"])
-        this.barChartData[0]["data"].push(element["count"])
+        if(element["_id"] == "placebo"){
+          this.barChartData[0]["data"][0] += element["count"]  
+        }
+        else{
+          this.barChartLabels.push(element["_id"])
+          this.barChartData[0]["data"].push(element["count"])
+        }
       });
-      console.log(JSON.stringify(this.statistics))
+      // console.log(JSON.stringify(this.statistics))
     })
     this.barChartData[0]["label"] = 'Times it has been used'
-    // this.showingResults = true
-    // this.conditionShowing = this.params['condition'] 
   }
 
   computeRemainingLength(){
