@@ -51,7 +51,8 @@ def getStatistics():
     pipeline = [{"$unwind": "$intervention"}, {"$group": {"_id": "$intervention", "count": {"$sum": 1}}}, {"$sort": SON([("count", -1), ("_id", 1)])},{"$limit": 11}]
     sortedResults = list(mongo.db.MediCom.aggregate(pipeline))
     pprint(sortedResults)
-    return json.dumps(sortedResults,default=str)
+    res = {"results": sortedResults}
+    return json.dumps(res,default=str)
 
 if __name__ == '__main__':
     app.run()

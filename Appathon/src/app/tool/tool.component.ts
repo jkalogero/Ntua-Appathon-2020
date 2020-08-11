@@ -25,7 +25,7 @@ export class ToolComponent implements OnInit {
   lengthOfConditionsModalReduced: Number
   loading = true
 
-  statistics = {}
+  statistics: any
 
 
   // the following are the configuration for statistics diagram
@@ -87,7 +87,8 @@ export class ToolComponent implements OnInit {
     let statisticsObservable = this._service.getStatistics()
     statisticsObservable.subscribe(statisticsResult => {
       this.statistics = statisticsResult
-      this.statistics.forEach(element => {
+      console.log(JSON.stringify(this.statistics))
+      this.statistics['results'].forEach(element => {
         if(element["_id"] == "placebo"){
           this.barChartData[0]["data"][0] += element["count"]  
         }
