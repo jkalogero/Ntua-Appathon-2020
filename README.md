@@ -95,4 +95,4 @@ python3 run.py
 ```
 ----
 
-Link στο [youtube] [https://youtu.be/mQdf9zvcb3Y].
+Link στο [youtube]: https://youtu.be/mQdf9zvcb3Y 
